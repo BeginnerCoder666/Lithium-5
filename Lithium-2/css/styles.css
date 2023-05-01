@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 body {
 }
 
-/* Video BG */
 
 header {
     position: relative;
     background-color: black;
-    height:65vh;
-    min-height: 25rem;
+    height: 50vh;
+    min-height: 30rem;
     width: 100%;
     overflow: hidden;
   }
@@ -41,9 +40,13 @@ header {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.65;
+    opacity: 0.8;
     z-index: 1;
   }
+  
+  /* Media Query for devices withi coarse pointers and no hover functionality */
+  
+  /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
   
   @media (pointer: coarse) and (hover: none) {
     header {
@@ -55,48 +58,23 @@ header {
     }
   }
 
-/*          */
-
-
-
-
-
-#maintitle {
-    text-align: right;
-}
-
-.mainname {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight:200;
-    font-style: italic;
-    text-align: right;
-}
-
-/* If the screen size is 1200px wide or more, set the font-size to 80px */
-@media (min-width: 1200px) {
-    #maintitle {
-      font-size: 60px;
-    }
+  .maintitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
   }
-  /* If the screen size is smaller than 1200px, set the font-size to 80px */
-  @media (max-width: 1199.98px) {
-    #maintitle {
-        padding: 12px 9px 0px 0px;
-      font-size: 35px;
-    }
-  }
+
 
 .nameanm {
     text-decoration: none;
-    display: inline-block;
-    position: relative;
-    color: white;
-  }
-  
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    color:unset;
+}
+
   .nameanm::after {
+    text-decoration: none;
     content: '';
-    position: absolute;
+    position: relative;
     width: 100%;
     transform: scaleX(0);
     height: 2px;
@@ -105,17 +83,24 @@ header {
     background-color: #0087ca;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
+    padding-bottom: 2px;
   }
   
   .nameanm:hover {
+    position: relative;
     margin: 5px;
     transform: scale(1.1);
     transition: all ease 300ms;
   }
-
   .nameanm:hover::after {
+    position: absolute;
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+  
+
+
+
+
 
 
